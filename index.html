@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | QA & System Development</title>
+  <title>Portfolio | Senior Software Engineer & QA Leader</title>
   <style>
     :root {
-      --bg: #0b1020;
-      --panel: rgba(255, 255, 255, 0.08);
-      --panel-solid: #121936;
-      --text: #eaf0ff;
-      --muted: #a8b3cf;
+      --bg: #0a0f1f;
+      --bg-soft: #10182d;
+      --panel: rgba(15, 23, 42, 0.78);
+      --panel-2: rgba(255, 255, 255, 0.04);
+      --text: #edf2ff;
+      --muted: #94a3b8;
       --accent: #7c9cff;
-      --accent-2: #67e8f9;
-      --border: rgba(255, 255, 255, 0.14);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-      --max-width: 1100px;
-      --radius: 22px;
+      --accent-2: #5eead4;
+      --line: rgba(148, 163, 184, 0.18);
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      --radius: 24px;
+      --max: 1160px;
     }
 
     * {
@@ -30,12 +31,12 @@
     }
 
     body {
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(124, 156, 255, 0.25), transparent 30%),
-        radial-gradient(circle at top right, rgba(103, 232, 249, 0.18), transparent 28%),
-        linear-gradient(180deg, #0b1020 0%, #121936 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(124, 156, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 85% 10%, rgba(94, 234, 212, 0.12), transparent 22%),
+        linear-gradient(180deg, #0a0f1f 0%, #0d1326 45%, #0a0f1f 100%);
       line-height: 1.6;
       min-height: 100vh;
     }
@@ -45,43 +46,54 @@
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
     .container {
-      width: min(92%, var(--max-width));
+      width: min(92%, var(--max));
       margin: 0 auto;
     }
 
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      backdrop-filter: blur(12px);
-      background: rgba(11, 16, 32, 0.72);
+      z-index: 100;
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(18px);
+      background: rgba(10, 15, 31, 0.7);
     }
 
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 0;
+      min-height: 76px;
+      gap: 1rem;
     }
 
-    .logo {
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
       font-weight: 700;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #08111f;
+      font-weight: 800;
+      box-shadow: var(--shadow);
     }
 
     .nav-links {
+      list-style: none;
       display: flex;
       gap: 1.2rem;
-      list-style: none;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.96rem;
     }
 
     .nav-links a:hover {
@@ -94,50 +106,69 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
+      grid-template-columns: 1.35fr 0.95fr;
       gap: 2rem;
       align-items: center;
     }
 
     .eyebrow {
-      display: inline-block;
-      padding: 0.35rem 0.75rem;
-      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.45rem 0.85rem;
+      border: 1px solid var(--line);
       border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
       color: var(--accent-2);
-      background: rgba(255, 255, 255, 0.04);
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
+      font-size: 0.88rem;
+      margin-bottom: 1.15rem;
     }
 
     h1 {
-      font-size: clamp(2.4rem, 6vw, 4.8rem);
-      line-height: 1.05;
+      font-size: clamp(2.8rem, 6vw, 5.25rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
       margin-bottom: 1rem;
-      letter-spacing: -0.03em;
     }
 
-    .hero p {
+    .hero-copy {
       color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 65ch;
-      margin-bottom: 1.8rem;
+      font-size: 1.07rem;
+      max-width: 62ch;
+      margin-bottom: 1.7rem;
+    }
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .pill {
+      padding: 0.7rem 0.95rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      color: #dbe7ff;
+      font-size: 0.92rem;
     }
 
     .hero-actions {
       display: flex;
-      gap: 1rem;
       flex-wrap: wrap;
+      gap: 0.95rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.95rem 1.25rem;
+      padding: 0.95rem 1.2rem;
       border-radius: 14px;
+      border: 1px solid transparent;
       font-weight: 600;
-      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+      transition: 0.2s ease;
     }
 
     .btn:hover {
@@ -147,49 +178,93 @@
     .btn-primary {
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       color: #08111f;
+      box-shadow: 0 20px 40px rgba(92, 143, 255, 0.2);
     }
 
     .btn-secondary {
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.03);
+      border-color: var(--line);
       color: var(--text);
     }
 
-    .hero-card,
-    .section-card,
-    .project-card {
+    .panel,
+    .timeline,
+    .project-card,
+    .contact-card,
+    .metric-card {
       background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: var(--shadow);
       backdrop-filter: blur(16px);
     }
 
-    .hero-card {
-      padding: 1.6rem;
+    .hero-panel {
+      border-radius: 28px;
+      padding: 1.4rem;
     }
 
-    .stat-list {
-      list-style: none;
+    .terminal {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      background: #0c1428;
+    }
+
+    .terminal-top {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .terminal-body {
+      padding: 1.2rem;
+      color: #d6def5;
+      font-size: 0.95rem;
+    }
+
+    .code-line {
+      display: flex;
+      gap: 0.8rem;
+      padding: 0.45rem 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+    }
+
+    .line-no {
+      color: #6b7b98;
+      min-width: 24px;
+    }
+
+    .metrics {
       display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
+      margin-top: 1rem;
     }
 
-    .stat-item {
-      padding: 1rem;
-      border-radius: 16px;
+    .metric-card {
+      border-radius: 20px;
+      padding: 1.1rem;
       background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .stat-item strong {
+    .metric-card strong {
       display: block;
-      font-size: 1.35rem;
-      margin-bottom: 0.2rem;
+      font-size: 1.6rem;
+      margin-bottom: 0.25rem;
     }
 
     section {
-      padding: 1.5rem 0 4rem;
+      padding: 1.35rem 0 4.5rem;
     }
 
     .section-heading {
@@ -197,122 +272,249 @@
     }
 
     .section-heading h2 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      margin-bottom: 0.4rem;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.45rem;
     }
 
     .section-heading p {
       color: var(--muted);
-      max-width: 60ch;
+      max-width: 64ch;
     }
 
-    .section-card {
-      padding: 2rem;
-    }
-
-    .skills-grid {
+    .about-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.4rem;
     }
 
-    .skill-chip {
-      padding: 1rem 1.1rem;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: var(--text);
-      font-weight: 500;
+    .panel {
+      border-radius: 24px;
+      padding: 1.8rem;
     }
 
-    .project-card {
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-    }
-
-    .project-visual {
-      min-height: 280px;
-      background:
-        linear-gradient(145deg, rgba(124, 156, 255, 0.25), rgba(103, 232, 249, 0.1)),
-        #0f1730;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    .visual-box {
-      width: 100%;
-      max-width: 360px;
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(255, 255, 255, 0.06);
-      padding: 1.2rem;
-      box-shadow: var(--shadow);
-    }
-
-    .visual-bar {
-      height: 10px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.14);
-      margin-bottom: 0.85rem;
-    }
-
-    .visual-bar:nth-child(2) {
-      width: 82%;
-    }
-
-    .visual-bar:nth-child(3) {
-      width: 62%;
-    }
-
-    .visual-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem;
+    .about-copy p + p {
       margin-top: 1rem;
     }
 
-    .visual-tile {
-      height: 80px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+    .about-copy p,
+    .project-copy p {
+      color: var(--muted);
     }
 
-    .project-content {
+    .mini-list {
+      display: grid;
+      gap: 0.9rem;
+      list-style: none;
+    }
+
+    .mini-list li {
+      padding: 0.95rem 1rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .mini-list strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+
+    .skill-group {
+      border-radius: 22px;
+      padding: 1.5rem;
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .skill-group h3 {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .chip {
+      padding: 0.65rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #dce7ff;
+      font-size: 0.92rem;
+    }
+
+    .timeline {
+      border-radius: 24px;
+      padding: 1.75rem;
+    }
+
+    .timeline-list {
+      list-style: none;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .timeline-item:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .timeline-year {
+      color: var(--accent-2);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+    }
+
+    .project-card {
+      border-radius: 28px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+    }
+
+    .project-visual {
+      min-height: 340px;
+      padding: 2rem;
+      background:
+        radial-gradient(circle at top right, rgba(124, 156, 255, 0.22), transparent 30%),
+        linear-gradient(155deg, #0d1730, #0b1020 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dashboard {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 24px;
+      padding: 1.1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow);
+    }
+
+    .dashboard-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .dashboard-box,
+    .dashboard-wide {
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .dashboard-box {
+      height: 88px;
+    }
+
+    .dashboard-wide {
+      height: 138px;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-copy {
       padding: 2rem;
     }
 
-    .project-tag {
+    .project-kicker {
       display: inline-block;
       color: var(--accent-2);
-      font-size: 0.9rem;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.92rem;
     }
 
-    .project-content h3 {
-      font-size: 1.7rem;
+    .project-copy h3 {
+      font-size: 2rem;
+      letter-spacing: -0.03em;
       margin-bottom: 0.8rem;
     }
 
-    .project-content p {
-      color: var(--muted);
-      margin-bottom: 1.25rem;
-    }
-
-    .project-highlights {
+    .project-points {
       display: grid;
       gap: 0.8rem;
-      color: var(--text);
-      margin-bottom: 1.5rem;
+      margin: 1.3rem 0 1.5rem;
     }
 
-    .project-highlights div {
+    .project-points div {
       padding: 0.9rem 1rem;
-      border-radius: 14px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.2rem;
+    }
+
+    .contact-card {
+      border-radius: 24px;
+      padding: 1.7rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 0.9rem;
+      margin-top: 1.1rem;
+    }
+
+    .contact-list li {
+      padding: 1rem 1rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-list span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .availability {
+      display: grid;
+      gap: 0.95rem;
+      margin-top: 1rem;
+    }
+
+    .availability div {
+      border-radius: 16px;
+      padding: 1rem;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
@@ -324,21 +526,27 @@
       font-size: 0.95rem;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 980px) {
       .hero-grid,
-      .project-card {
+      .about-grid,
+      .project-card,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 4rem;
+      .skills-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 680px) {
       .nav {
         flex-direction: column;
-        gap: 0.9rem;
+        padding: 0.9rem 0;
       }
 
       .nav-links {
@@ -346,14 +554,21 @@
         justify-content: center;
       }
 
-      .skills-grid {
+      .timeline-item {
         grid-template-columns: 1fr;
+        gap: 0.35rem;
       }
 
-      .section-card,
-      .project-content,
-      .hero-card {
-        padding: 1.4rem;
+      .panel,
+      .timeline,
+      .project-copy,
+      .contact-card,
+      .hero-panel {
+        padding: 1.25rem;
+      }
+
+      .dashboard-row {
+        grid-template-columns: 1fr 1fr;
       }
     }
   </style>
@@ -361,11 +576,16 @@
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a href="#home" class="logo">Portfolio</a>
+      <a href="#home" class="brand">
+        <span class="brand-mark">SD</span>
+        <span>Leila Strömberg</span>
+      </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#skills">Expertise</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#project">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </header>
@@ -374,32 +594,53 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">System Developer • Test Manager • QA Engineer</span>
-          <h1>Leila Strömberg</h1>
-          <p>
-            Experienced system developer, test manager, and QA engineer with 20+ years of expertise across the full software development lifecycle. I build reliable systems, improve quality practices, and connect development with verification to deliver robust, compliant, and high-performing products.
+          <span class="eyebrow">Senior Software Engineer • QA Leader • Test Strategist</span>
+          <h1>Building reliable software with engineering depth and quality leadership.</h1>
+          <p class="hero-copy">
+            I help teams deliver dependable products by combining system development, test leadership, process improvement, and product thinking. With more than 20 years across software, quality assurance, and regulated environments, I turn complexity into structured, scalable delivery.
           </p>
+
+          <div class="hero-highlights">
+            <span class="pill">20+ years in development and QA</span>
+            <span class="pill">Agile and regulated environments</span>
+            <span class="pill">From requirements to release</span>
+          </div>
+
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#project">View Featured Project</a>
-            <a class="btn btn-secondary" href="#skills">Explore Skills</a>
+            <a class="btn btn-primary" href="#contact">Let’s Talk</a>
+            <a class="btn btn-secondary" href="#project">View Project</a>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Professional summary highlights">
-          <ul class="stat-list">
-            <li class="stat-item">
-              <strong>20+ Years</strong>
-              Experience across medical technology, finance, and telecommunications.
-            </li>
-            <li class="stat-item">
-              <strong>End-to-End Quality</strong>
-              From requirements and design to implementation, verification, and release.
-            </li>
-            <li class="stat-item">
-              <strong>Agile & Regulated</strong>
-              Comfortable in both fast-moving product teams and compliance-focused environments.
-            </li>
-          </ul>
+        <aside class="hero-panel panel">
+          <div class="terminal">
+            <div class="terminal-top">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <div class="terminal-body">
+              <div class="code-line"><span class="line-no">01</span><span>role = "Senior Developer & QA Lead"</span></div>
+              <div class="code-line"><span class="line-no">02</span><span>focus = ["quality", "architecture", "delivery"]</span></div>
+              <div class="code-line"><span class="line-no">03</span><span>strength = "turning complexity into clarity"</span></div>
+              <div class="code-line"><span class="line-no">04</span><span>impact = "better releases, lower risk, stronger teams"</span></div>
+            </div>
+          </div>
+
+          <div class="metrics">
+            <div class="metric-card">
+              <strong>20+</strong>
+              <span>Years of experience</span>
+            </div>
+            <div class="metric-card">
+              <strong>E2E</strong>
+              <span>Lifecycle ownership</span>
+            </div>
+            <div class="metric-card">
+              <strong>QA + Dev</strong>
+              <span>Technical leadership</span>
+            </div>
+          </div>
         </aside>
       </div>
     </section>
@@ -407,15 +648,38 @@
     <section id="about">
       <div class="container">
         <div class="section-heading">
-          <h2>About Me</h2>
+          <h2>About</h2>
           <p>
-            I bring a structured, analytical approach to software engineering and quality assurance, with a strong focus on collaboration, continuous improvement, and dependable delivery. My background spans system development, test strategy, release coordination, and process improvement in complex technical environments.
+            I work where software engineering, test strategy, and delivery discipline meet. My background spans system development, automation, verification, release readiness, and cross-functional collaboration in complex product environments.
           </p>
         </div>
-        <div class="section-card">
-          <p>
-            Over the years, I have worked across multidisciplinary teams to strengthen quality from the earliest requirements to final release. My work combines technical depth with practical leadership, helping organisations improve reliability, traceability, and delivery confidence while supporting agile ways of working.
-          </p>
+
+        <div class="about-grid">
+          <div class="panel about-copy">
+            <p>
+              Over the years, I have helped teams strengthen quality from the first requirement through implementation, validation, and release. I am comfortable moving between hands-on technical work and broader coordination across developers, testers, product stakeholders, and management.
+            </p>
+            <p>
+              My approach is pragmatic and structured: build strong engineering foundations, make quality measurable, reduce delivery risk, and create ways of working that scale. I value clarity, traceability, and collaboration just as much as technical execution.
+            </p>
+          </div>
+
+          <div class="panel">
+            <ul class="mini-list">
+              <li>
+                <strong>Engineering mindset</strong>
+                Designing systems and workflows that are reliable, maintainable, and testable.
+              </li>
+              <li>
+                <strong>Quality leadership</strong>
+                Building strategies, metrics, and practices that improve confidence in every release.
+              </li>
+              <li>
+                <strong>Business awareness</strong>
+                Aligning technical decisions with delivery goals, compliance needs, and stakeholder expectations.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -423,26 +687,97 @@
     <section id="skills">
       <div class="container">
         <div class="section-heading">
-          <h2>Skills</h2>
+          <h2>Core Expertise</h2>
           <p>
-            A mix of engineering, quality, process, and collaboration capabilities built through hands-on work in demanding and regulated domains.
+            A senior-level profile built across software engineering, test management, process improvement, and modern delivery practices.
           </p>
         </div>
-        <div class="section-card">
-          <div class="skills-grid">
-            <div class="skill-chip">Python System Development</div>
-            <div class="skill-chip">Artificial Intelligence & Machine Learning</div>
-            <div class="skill-chip">Frontend Development</div>
-            <div class="skill-chip">SQL</div>
-            <div class="skill-chip">Test Management & QA Strategy</div>
-            <div class="skill-chip">Systems Engineering & Product Development</div>
-            <div class="skill-chip">Agile & SAFe Methodologies</div>
-            <div class="skill-chip">Jenkins, Azure DevOps, Git, DOORS</div>
-            <div class="skill-chip">Process Improvement & Automation</div>
-            <div class="skill-chip">Cross-Functional Collaboration</div>
-            <div class="skill-chip">Stakeholder Management</div>
-            <div class="skill-chip">Regulatory Compliance</div>
+
+        <div class="skills-layout">
+          <div class="skill-group">
+            <h3>Software & Technical Skills</h3>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">System Development</span>
+              <span class="chip">Frontend Development</span>
+              <span class="chip">SQL</span>
+              <span class="chip">Automation</span>
+              <span class="chip">AI & Machine Learning</span>
+            </div>
           </div>
+
+          <div class="skill-group">
+            <h3>Quality & Delivery</h3>
+            <div class="chips">
+              <span class="chip">Test Strategy</span>
+              <span class="chip">QA Leadership</span>
+              <span class="chip">Verification & Validation</span>
+              <span class="chip">Risk-Based Testing</span>
+              <span class="chip">Release Readiness</span>
+              <span class="chip">Regulatory Compliance</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Ways of Working</h3>
+            <div class="chips">
+              <span class="chip">Agile</span>
+              <span class="chip">SAFe</span>
+              <span class="chip">Cross-Functional Leadership</span>
+              <span class="chip">Stakeholder Management</span>
+              <span class="chip">Continuous Improvement</span>
+              <span class="chip">Process Design</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>Tools & Platforms</h3>
+            <div class="chips">
+              <span class="chip">Git</span>
+              <span class="chip">Azure DevOps</span>
+              <span class="chip">Jenkins</span>
+              <span class="chip">DOORS</span>
+              <span class="chip">Traceability Workflows</span>
+              <span class="chip">Dev/Test Collaboration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Experience Snapshot</h2>
+          <p>
+            A broad career spanning development, testing, leadership, and delivery in quality-critical technical domains.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <ul class="timeline-list">
+            <li class="timeline-item">
+              <div class="timeline-year">Today</div>
+              <div>
+                <h3>Senior development and quality leadership</h3>
+                <p>Driving reliable delivery by connecting engineering execution, test strategy, release confidence, and process maturity.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-year">Recent</div>
+              <div>
+                <h3>Agile and regulated product environments</h3>
+                <p>Supporting teams where traceability, collaboration, verification, and continuous improvement all matter at once.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-year">Earlier</div>
+              <div>
+                <h3>System development, testing, and coordination</h3>
+                <p>Building technical depth across implementation, quality engineering, process improvement, and cross-team delivery.</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -452,56 +787,69 @@
         <div class="section-heading">
           <h2>Featured Project</h2>
           <p>
-            An example project that reflects my blend of software development, AI, and quality leadership.
+            A portfolio project that represents the kind of value I bring: clear structure, strong engineering, and measurable quality outcomes.
           </p>
         </div>
 
         <article class="project-card">
-          <div class="project-visual" aria-hidden="true">
-            <div class="visual-box">
-              <div class="visual-bar"></div>
-              <div class="visual-bar"></div>
-              <div class="visual-bar"></div>
-              <div class="visual-grid">
-                <div class="visual-tile"></div>
-                <div class="visual-tile"></div>
-                <div class="visual-tile"></div>
-                <div class="visual-tile"></div>
+          <div class="project-visual">
+            <div class="dashboard">
+              <div class="dashboard-wide"></div>
+              <div class="dashboard-row">
+                <div class="dashboard-box"></div>
+                <div class="dashboard-box"></div>
+                <div class="dashboard-box"></div>
               </div>
+              <div class="dashboard-wide"></div>
             </div>
           </div>
 
-          <div class="project-content">
-            <span class="project-tag">Featured Project</span>
-            <h3>AI-Driven QA Platform</h3>
+          <div class="project-copy">
+            <span class="project-kicker">AI-Driven Quality Platform</span>
+            <h3>Smarter release decisions through engineering and QA insight.</h3>
             <p>
-              A concept platform that combines automated test orchestration, quality dashboards, and AI-assisted defect analysis to improve software reliability and release readiness.
+              This concept platform combines automated testing workflows, quality dashboards, and AI-assisted defect analysis to help teams see risk earlier, improve prioritisation, and strengthen release confidence.
             </p>
 
-            <div class="project-highlights">
-              <div>Designed to connect development, testing, and release workflows in one streamlined view.</div>
-              <div>Uses AI to identify defect patterns, prioritise risks, and support smarter test decisions.</div>
-              <div>Fits teams working in agile, regulated, and quality-critical product environments.</div>
+            <div class="project-points">
+              <div>Connects development, testing, and delivery signals in a single operational view.</div>
+              <div>Highlights defect patterns and quality trends to support better engineering decisions.</div>
+              <div>Built for teams that need both agile speed and disciplined quality control.</div>
             </div>
 
-            <a class="btn btn-secondary" href="#home">Back to Top</a>
+            <a class="btn btn-secondary" href="#contact">Discuss a Similar Project</a>
           </div>
         </article>
       </div>
     </section>
 
-        <section id="contact">
+    <section id="contact">
       <div class="container">
         <div class="section-heading">
           <h2>Contact</h2>
           <p>
-            Interested in collaborating, discussing a project, or connecting professionally? Feel free to reach out.
+            Open to discussions about software quality, development leadership, consulting opportunities, and collaborative technical work.
           </p>
         </div>
-        <div class="section-card">
-          <div class="skills-grid">
-            <div class="skill-chip">Email: strombergleila@example.com</div>
-            <div class="skill-chip">Location: Stockholm, Sweden</div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Let’s connect</h3>
+            <ul class="contact-list">
+              <li>
+                <span>Email</span>
+                strombergleila@gmail.com
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-card">
+            <h3>How I work</h3>
+            <div class="availability">
+              <div>Available for senior engineering, QA leadership, and improvement-focused consulting conversations.</div>
+              <div>Strong fit for teams that value quality, structure, collaboration, and dependable delivery.</div>
+              <div>Based in Sweden and open to remote collaboration.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -510,7 +858,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>Built with HTML and CSS. Ready for GitHub Pages deployment.</p>
+      Built with HTML and CSS. Optimized for GitHub Pages deployment.
     </div>
   </footer>
 </body>
