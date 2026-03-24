@@ -52,10 +52,11 @@
       margin: 0 auto;
     }
 
-    .frame {
-      background: transparent;
-      border-radius: 0;
-      box-shadow: none;
+   .frame {
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
     }
 
     .top-banner {
@@ -109,34 +110,40 @@
     }
 
     .hero {
-        display: grid;
-        grid-template-columns: 1.05fr 1.15fr;
-        align-items: stretch;
-        margin-top: -36px;
-        background: linear-gradient(180deg, #141628 0%, #11131f 100%);
+    display: grid;
+    grid-template-columns: 1.05fr 1.15fr;
+    align-items: stretch;
+    margin-top: -36px;
+    gap: 0;
+    background: linear-gradient(180deg, #141628 0%, #11131f 100%);
     }
 
     .hero-image {
-      min-height: 700px;
-      overflow: hidden;
-      position: relative;
-      z-index: 2;
-      background: transparent;
+    min-height: 700px;
+    margin: 0;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
     }
 
     .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      border: none;
-      outline: none;
-      box-shadow: none;
-      border-radius: 0;
-      background: transparent;
-      -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
-      mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    object-position: center;
+    background: transparent;
+    border: 0 !important;
+    outline: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
     }
 
     .hero-content {
