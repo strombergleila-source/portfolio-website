@@ -32,7 +32,10 @@
 
     body {
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #ececec;
+      background: #0b0d16;
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px;
       color: var(--text);
       line-height: 1.6;
       padding: 24px;
@@ -70,6 +73,8 @@
     }
 
     .navbar {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: 280px 1fr;
       min-height: 88px;
@@ -116,11 +121,15 @@
       display: grid;
       grid-template-columns: 1.05fr 1.15fr;
       align-items: stretch;
+      margin-top: -40px;
     }
 
     .hero-image {
       min-height: 620px;
       background: #0d1017;
+      padding: 0;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-image img {
@@ -128,6 +137,7 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
+      border-radius: 0;
     }
 
     .hero-content {
@@ -373,7 +383,7 @@
       <div class="top-banner">Senior software engineering, quality leadership, and product-minded delivery.</div>
 
       <header class="navbar">
-        <a class="brand" href="#home"><span>Leila Strömberg</span></a>
+        <a class="brand" href="#home"><span>Leila.W</span></a>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#project">Project</a></li>
@@ -383,7 +393,7 @@
 
       <section class="hero" id="home">
         <div class="hero-image">
-          <img src="scuba.jpg" alt="Leila scuba diving underwater" />
+          <img src="scuba.jpeg" alt="Leila scuba diving underwater" />
         </div>
         <div class="hero-content">
           <div class="eyebrow">Senior Developer • QA Lead • Test Strategist</div>
@@ -460,8 +470,9 @@
         <div class="contact-card">
           <h3>Get in touch</h3>
           <ul class="contact-list">
-            <li><span>Email</span>strombergleila@gmail.com</li>
-            <li><span>GitHub</span>https://github.com/strombergleila-source/portfolio-website</li>
+            <li><span>Email</span>your.email@example.com</li>
+            <li><span>LinkedIn</span>linkedin.com/in/yourprofile</li>
+            <li><span>GitHub</span>github.com/yourusername</li>
           </ul>
         </div>
         <div class="contact-card">
@@ -476,3 +487,4 @@
   </section>
 </body>
 </html>
+
