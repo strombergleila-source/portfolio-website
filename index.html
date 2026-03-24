@@ -8,14 +8,13 @@
     :root {
       --bg: #0b0d16;
       --bg-soft: #121528;
+      --bg-card: #14182b;
       --accent: #6d31ff;
       --text: #f5f7fb;
       --muted: #b2b7c8;
-      --muted-strong: #8d92a6;
-      --panel: #17192a;
-      --card: #11131f;
-      --border: rgba(255,255,255,0.08);
-      --shadow: 0 24px 60px rgba(0,0,0,0.35);
+      --muted-strong: #7e8498;
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
       --radius: 22px;
       --max: 1180px;
     }
@@ -32,10 +31,7 @@
 
     body {
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0b0d16;
-      color: var(--text);
-      line-height: 1.6;
-      padding: 24px;
+      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       padding: 24px;
@@ -73,11 +69,12 @@
     }
 
     .navbar {
-      position: relative;
-      z-index: 1;
       display: grid;
       grid-template-columns: 280px 1fr;
       min-height: 88px;
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(180deg, #15182c 0%, #121528 100%);
     }
 
     .brand {
@@ -88,10 +85,6 @@
       font-size: 1.5rem;
       font-weight: 800;
       letter-spacing: -0.04em;
-    }
-
-    .brand span {
-      opacity: 0.9;
     }
 
     .nav-links {
@@ -113,41 +106,40 @@
       background: var(--accent);
       color: white;
       padding: 1rem 1.4rem;
-      border-radius: 0;
       font-weight: 700;
     }
 
     .hero {
-    display: grid;
-    grid-template-columns: 1.05fr 1.15fr;
-    align-items: stretch;
-    margin-top: -40px;
-    gap: 0;
+      display: grid;
+      grid-template-columns: 1.05fr 1.15fr;
+      align-items: stretch;
+      margin-top: -36px;
+      background: linear-gradient(180deg, #141628 0%, #11131f 100%);
     }
 
     .hero-image {
-    min-height: 620px;
-    margin: 0;
-    padding: 0;
-    background: transparent;
-    overflow: hidden;
-    display: flex;
+      min-height: 700px;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      background: transparent;
     }
 
     .hero-image img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border: 0;
-    outline: 0;
-    box-shadow: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      border-radius: 0;
+      background: transparent;
     }
 
     .hero-content {
-      background: linear-gradient(180deg, #141628 0%, #11131f 100%);
-      padding: 5rem 4rem;
+      padding: 5.5rem 4rem 4rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -162,15 +154,15 @@
     }
 
     h1 {
-      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-size: clamp(3rem, 6vw, 5.25rem);
       line-height: 1.02;
       letter-spacing: -0.05em;
       margin-bottom: 1.4rem;
-      max-width: 10ch;
+      max-width: 9ch;
     }
 
     .dim {
-      color: #7d8398;
+      color: var(--muted-strong);
     }
 
     .intro {
@@ -193,8 +185,8 @@
     .section-header {
       display: flex;
       justify-content: space-between;
-      gap: 1rem;
       align-items: end;
+      gap: 1rem;
       margin-bottom: 1.8rem;
     }
 
@@ -205,7 +197,7 @@
 
     .section-header p {
       max-width: 58ch;
-      color: #545866;
+      color: var(--muted);
     }
 
     .about-card,
@@ -238,14 +230,14 @@
     .about-list li {
       padding: 1rem;
       border-radius: 16px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
     }
 
     .about-list strong {
       display: block;
       margin-bottom: 0.2rem;
-      color: #1a1d2b;
+      color: var(--text);
     }
 
     .project-card {
@@ -253,7 +245,7 @@
     }
 
     .project-label {
-      color: var(--accent);
+      color: #9f7cff;
       font-weight: 700;
       margin-bottom: 0.6rem;
       display: inline-block;
@@ -264,7 +256,7 @@
       letter-spacing: -0.04em;
       line-height: 1.08;
       margin-bottom: 0.9rem;
-      color: #11131f;
+      color: var(--text);
     }
 
     .project-card p {
@@ -281,7 +273,7 @@
     .project-points div {
       padding: 1rem 1.1rem;
       border-radius: 16px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
       color: var(--text);
     }
@@ -299,7 +291,7 @@
     .contact-card h3 {
       font-size: 1.5rem;
       margin-bottom: 0.9rem;
-      color: #11131f;
+      color: var(--text);
     }
 
     .contact-card p,
@@ -317,20 +309,20 @@
     .contact-list li {
       padding: 0.95rem 1rem;
       border-radius: 14px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
     }
 
     .contact-list span {
       display: block;
       font-size: 0.9rem;
-      color: #7c8192;
+      color: #8a90a3;
       margin-bottom: 0.15rem;
     }
 
     .footer {
       text-align: center;
-      color: #72778a;
+      color: #7b8194;
       font-size: 0.95rem;
       padding: 1.5rem 1rem 0;
     }
@@ -354,12 +346,20 @@
         gap: 1rem;
       }
 
+      .hero {
+        margin-top: 0;
+      }
+
       .hero-content {
         padding: 3rem 2rem;
       }
 
       h1 {
         max-width: none;
+      }
+
+      .hero-image {
+        min-height: 420px;
       }
     }
 
@@ -377,7 +377,11 @@
       }
 
       .hero-image {
-        min-height: 360px;
+        min-height: 320px;
+      }
+
+      .hero-content {
+        padding: 2.25rem 1.25rem;
       }
     }
   </style>
@@ -388,7 +392,7 @@
       <div class="top-banner">Senior software engineering, quality leadership, and product-minded delivery.</div>
 
       <header class="navbar">
-        <a class="brand" href="#home"><span>Leila Strömberg</span></a>
+        <a class="brand" href="#home">Leila Strömberg</a>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#project">Project</a></li>
@@ -398,7 +402,7 @@
 
       <section class="hero" id="home">
         <div class="hero-image">
-          <img src="scuba.jpg" alt="Scuba diving photo" />
+          <img src="scuba.jpg" alt="Scuba diving photo">
         </div>
         <div class="hero-content">
           <div class="eyebrow">Senior Developer • QA Lead • Test Strategist</div>
@@ -417,6 +421,7 @@
         <h2>About</h2>
         <p>A concise overview of my background, working style, and the value I bring to engineering teams.</p>
       </div>
+
       <div class="about-card">
         <div>
           <p>
@@ -426,6 +431,7 @@
             My strength is connecting technical depth with practical delivery. I work well across development, testing, and stakeholder groups, helping teams reduce risk, improve clarity, and build better software together.
           </p>
         </div>
+
         <ul class="about-list">
           <li>
             <strong>Engineering + Quality</strong>
@@ -450,6 +456,7 @@
         <h2>Project</h2>
         <p>A featured example that reflects how I combine engineering thinking, quality focus, and delivery improvement.</p>
       </div>
+
       <article class="project-card">
         <span class="project-label">Featured Project</span>
         <h3>AI-Driven Quality Platform for smarter release decisions</h3>
@@ -471,6 +478,7 @@
         <h2>Contact</h2>
         <p>Open to senior engineering roles, QA leadership opportunities, and improvement-focused consulting conversations.</p>
       </div>
+
       <div class="contact-grid">
         <div class="contact-card">
           <h3>Get in touch</h3>
@@ -479,6 +487,7 @@
             <li><span>GitHub</span>https://github.com/strombergleila-source/portfolio-website</li>
           </ul>
         </div>
+
         <div class="contact-card">
           <h3>How I work</h3>
           <p>
@@ -486,9 +495,9 @@
           </p>
         </div>
       </div>
+
       <div class="footer">Built with HTML and CSS for GitHub Pages.</div>
     </div>
   </section>
 </body>
 </html>
-
